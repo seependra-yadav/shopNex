@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopNex</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="main-container">
+        <section class="navbar">
+            <h2 class="logo">ShopNex</h2>
+            <div class="search-box"><input type="text" class="search-input" placeholder="Search here "><i
+                    class="fa-solid fa-magnifying-glass search-icon"></i></div>
+            <div class="cart-box ">
+                 <div class="cart-icon"><li class="cart"> <i class="fa-solid fa-cart-shopping " onclick="window.location.href='cart.html'"></i><span id="cartCount">0</span>
+                        
+                </li></div>
+                <li class="cart"><i class="fa-solid fa-user "></i> Login</li>
+               
+                
+            </div>
+
+        </section>
+
+        <section class="products" id="productList">
+            <!-- <div class="product-card">
+                <img src="./assets/product1.png" alt="product">
+
+                <h3>Product Name</h3>
+                <p class="price">₹999</p>
+
+                <button>Add to Cart</button>
+            </div> -->
+        </section>
+
+    </div>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
