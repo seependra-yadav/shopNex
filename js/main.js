@@ -65,6 +65,7 @@ searchProduct.addEventListener("input", (e) => {
 
 
 
+
 let currentCategory = 'all';
 
 function filterCategory(category) {
@@ -81,4 +82,32 @@ function filterCategory(category) {
 
   addProducts(filteredProducts);
 }
+
+
+
+// login logout functinality  
+
+
+// Check logged-in user
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+const usernameDisplay = document.getElementById("usernameDisplay");
+const logoutBtn = document.getElementById("logoutBtn");
+const loginLink = document.getElementById("loginLink");
+
+if (currentUser) {
+  usernameDisplay.innerText = `Hi, ${currentUser.name}`;
+  logoutBtn.style.display = "inline-block";
+  loginLink.style.display = "none";
+} else {
+  usernameDisplay.innerText = "";
+  logoutBtn.style.display = "none";
+  loginLink.style.display = "inline-block";
+}
+
+// Logout functionality
+logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem("currentUser");
+  window.location.reload();
+});
 
