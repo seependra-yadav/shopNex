@@ -212,3 +212,71 @@ body {
 .category-filter button:hover {
   background-color: #970747;
 }
+
+
+
+/* login form css ================================================= */
+.auth-container {
+  width: 500px;
+  margin: 80px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.auth-container input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 8px;
+}
+
+.auth-container button {
+  padding: 10px 20px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#toggle-link {
+  color: #0d6efd;
+  cursor: pointer;
+}
+
+
+
+/* login -out btn css  */
+
+#user-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#user-section button{
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#user-section button:hover {
+  background-color: #a71d2a;
+}
+
+
+#user-section a{
+
+   padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
