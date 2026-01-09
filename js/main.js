@@ -1,7 +1,7 @@
 const productList = document.querySelector("#productList");
 
-function addProducts() {
-   productList.innerHTML = products.map(product => `
+function addProducts(data = products) {
+   productList.innerHTML = data.map(product => `
   <div class="product-card" onclick="openProduct(${product.id})">
     <img src="${product.image}">
     <h3>${product.name}</h3>
@@ -45,3 +45,40 @@ function updateCartCount() {
 }
 
 updateCartCount();
+
+
+// add search operarion -----------------
+
+let filteredProducts = products;
+let searchProduct = document.getElementById("searchInput");
+
+searchProduct.addEventListener("input", (e) => {
+  const query = e.target.value.toLowerCase();
+
+  filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(query)
+  );
+
+  addProducts(filteredProducts);
+});
+
+
+
+
+let currentCategory = 'all';
+
+function filterCategory(category) {
+   console.log("Category clicked:", category);
+  console.log("Products before filter:", products);
+  currentCategory = category; // store selected category
+
+  const query = document.getElementById("searchInput")?.value.toLowerCase() || '';
+
+  const filteredProducts = products.filter(p => 
+    (currentCategory === 'all' || p.category === currentCategory) &&
+    p.name.toLowerCase().includes(query)
+  );
+
+  addProducts(filteredProducts);
+}
+
