@@ -11,13 +11,15 @@ body {
 
 .navbar {
     display: flex;
-    height: 80px;
-    width: 100%;
     background-color: pink;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 12px 20px;
 }
 
+.logo {
+  margin: 0;
+}
 .navbar li {
     list-style-type: none;
     font-size: 20px;
@@ -25,16 +27,12 @@ body {
 
 .cart-box {
     display: flex;
-    /* width: 100px; */
     align-items: center;
+    gap: 20px;
 
 }
 
-.cart {
-    margin: 0 20px;
-    cursor: pointer;
 
-}
 
 
 /* search box input ============= */
@@ -60,6 +58,42 @@ body {
     cursor: pointer;
 }
 
+/* hamburger for responsive navbar --------------------------- */
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .search-box {
+    display: none; 
+  }
+
+  .cart-box {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: pink;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .cart-box.active {
+    display: flex;
+  }
+}
 
 /* product box css  */
 
@@ -87,7 +121,7 @@ body {
 
 .product-card img {
     width: 100%;
-    height: 180px;
+    height: 280px;
     /* object-fit: contain; */
     object-fit: fit;
     margin-bottom: 10px;
@@ -176,12 +210,13 @@ body {
 /* count css */
 .cart-icon {
   position: relative;
+  cursor: pointer;
 }
 
 #cartCount {
   position: absolute;
   top: -8px;
-  right: -3px;
+  right: -15px;
   background: red;
   color: white;
   font-size: 12px;
@@ -198,6 +233,7 @@ body {
   display: flex;
   gap: 10px;
   padding: 20px;
+  flex-wrap: wrap;
 }
 
 .category-filter button {
@@ -212,6 +248,29 @@ body {
 .category-filter button:hover {
   background-color: #970747;
 }
+
+
+/* responsive category section css=============== */
+
+
+@media (max-width: 768px) {
+  .category-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+  }
+
+  .category-filter::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .category-filter button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
 
 
 
